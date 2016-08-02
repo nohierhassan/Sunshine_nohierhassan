@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="action_settings">Settings</string>
+    <string name = "action_refresh" translatable = "false"> Refresh</string>
+    <string name = "apiKey" translatable="false">07214a7a1c7de02cd168e2d1411a455c  </string>
 </resources>
