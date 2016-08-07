@@ -52,26 +52,25 @@ public class MainActivityFragment extends Fragment {
         f.execute(getString(R.string.locatoin_pref_default_value));
         setHasOptionsMenu(true);
     }
-    @Override
-    public void onStart(){
-        super.onStart();
-        updateWeather();
-    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.forecastfragment, menu);
     }
-    private void updateWeather(){
-
-        FetchWeatherTask f = new FetchWeatherTask();
-        // now we want to get the value saved in the preferences
+    private void updateWeather() {
+        FetchWeatherTask weatherTask = new FetchWeatherTask();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String location = prefs.getString(getString(R.string.location_pref_key),
                 getString(R.string.locatoin_pref_default_value));
-        f.execute(location);
-
+        weatherTask.execute(location);
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        updateWeather();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -168,8 +167,9 @@ public class MainActivityFragment extends Fragment {
                 low  =(low*1.8)+32;
             }
             else if(!unitType.equals(getString(R.string.temp_value_metric))) // if the value nither nor
-               Log.d(LOG_TAG,"Unit type not found"+unitType);
-
+            {
+                Log.d(LOG_TAG, "Unit type not found" + unitType);
+            }
 
 // For presentation, assume the user doesn't care about tenths of a degree.
             long roundedHigh = Math.round(high);
