@@ -20,9 +20,13 @@
          android:defaultValue = "@string/temp_pref_default_value"
          android:entries="@array/temp_pref_label"
          android:entryValues="@array/temp_pref_values"
-
-
-
-
          />
+     <EditTextPreference
+         android:title="@string/map_location"
+         android:key="map_location"
+         android:defaultValue="@string/map_location_default"
+         android:inputType="text"
+         android:singleLine="true"
+         />
+
 </PreferenceScreen>

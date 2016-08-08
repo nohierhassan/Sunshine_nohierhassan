@@ -24,6 +24,11 @@
     <string name = "temp_lable_imperial">Imperial</string>
     <string name = "temp_value_metric">metric</string>
     <string name="temp_value_imperial">imperial</string>
+<string name="map_location_key">map_location</string>
+    <string name="map_location_default">94043</string>
+
+    <!-- string for the action bar-->
+<string name="share_title">Share</string>
 
 
 
@@ -70,6 +75,9 @@
         <item>360</item>
         <item>-1</item>
     </string-array>
+
+
+    <string name="map_location" translatable="false">Show Location</string>
 
     <string name="pref_title_system_sync_settings">System sync settings</string>
 
